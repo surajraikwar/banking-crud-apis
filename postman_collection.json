@@ -1,0 +1,491 @@
+{
+	"info": {
+		"_postman_id": "ac4b0a2a-020d-4412-82a0-cc0fe4e080ac",
+		"name": "Bank CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/accounts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accounts by Bank",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/bank/accounts?bank=State Bank Of India",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bank",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "bank",
+							"value": "State Bank Of India"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accounts by Branch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/bank/branch/accounts?ifsc=SBIN0017628",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bank",
+						"branch",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "ifsc",
+							"value": "SBIN0017628"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account by account number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/account?account_number=307212176573",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"account"
+					],
+					"query": [
+						{
+							"key": "account_number",
+							"value": "307212176573"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open bank account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Suraj Raikwar\",\n    \"ifsc\": \"SBIN0017628\",\n    \"aadhaar\": 564732345309,\n    \"account_type\": \"Savings\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/open-account",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"open-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update bank account balance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_number\": 3072121765731,\n    \"transaction_type\": \"debit\",\n    \"amount\": 99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/account/update-balance",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"account",
+						"update-balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Account Details",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_number\": 307212176573,\n    \"aadhaar\": 564732345309,\n    \"name\": \"Suraj\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/account/update-details",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"account",
+						"update-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Close bank account",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_number\": 307212176573,\n    \"ifsc\": \"SBIN0017628\",\n    \"aadhaar\": 564732345309\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/account/close-account",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"account",
+						"close-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All banks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/banks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"banks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Bank by Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/bank?name=State Bank Of India",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bank"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "State Bank Of India"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bank branches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/bank/branches?bank=State Bank Of India",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bank",
+						"branches"
+					],
+					"query": [
+						{
+							"key": "bank",
+							"value": "State Bank Of India"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Branch by IFSC",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/bank/branch?ifsc=SBIN0017628",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bank",
+						"branch"
+					],
+					"query": [
+						{
+							"key": "ifsc",
+							"value": "SBIN0017628"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Bank",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"State Bank Of India\",\n    \"headquarter\": \"Mumbai\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/banks/add-bank",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"banks",
+						"add-bank"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Bank",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"53f0d72a-c010-4f50-ad18-bb955b31bf4b\",\n    \"name\": \"State Bank Of India\",\n    \"headquarter\": \"Updated\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/banks/update-bank",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"banks",
+						"update-bank"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bank",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"State Bank Of India\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/banks/delete-bank",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"banks",
+						"delete-bank"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Bank Branch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bank\": \"State Bank Of India\",\n    \"ifsc\": \"SBIN0017628\",\n    \"address\": \"Elite Crossing, Jhansi\",\n    \"manager\": \"Manager1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/bank/add-branch",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bank",
+						"add-branch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Branch details",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"ifsc\": \"SBIN0012345\",\n    \"manager\": \"Manager1\",\n    \"address\": \"Elite Crossing, Jhansi, U.P.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/bank/update-branch",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bank",
+						"update-branch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bank branch",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/bank/delete-branch",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bank",
+						"delete-branch"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

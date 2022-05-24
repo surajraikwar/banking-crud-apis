@@ -1,0 +1,24 @@
+--CREATE TABLE IF NOT EXISTS bank (
+--  id                     VARCHAR PRIMARY KEY,
+--  name                   VARCHAR      NOT NULL,
+--  headquarter            VARCHAR      NULL
+--);
+--
+--CREATE TABLE IF NOT EXISTS branch (
+--  id                     INTEGER PRIMARY KEY AUTO_INCREMENT,
+--  bank                   FOREIGN KEY  (id) REFERENCES Bank(id) ON DELETE CASCADE ON UPDATE CASCADE,
+--  ifsc                   VARCHAR(50)  NOT NULL UNIQUE,
+--  address                VARCHAR(250) NULL,
+--  branchManager          VARCHAR(50)  NULL
+--)
+--
+--CREATE TABLE IF NOT EXISTS account(
+--  id                     INTEGER PRIMARY KEY AUTO_INCREMENT,
+--  accountNumber          INT          NOT NULL UNIQUE,
+--  aadhaar                INT          NOT NULL UNIQUE,
+--  accountHolderName      VARCHAR(250) NOT NULL,
+--  accountBalance         DECIMAL      DEFAULT 0.0,
+--  accountType            VARCHAR(50)  NOT NULL,
+--  bank                   FOREIGN KEY  (id) REFERENCES Bank(id) ON DELETE CASCADE ON UPDATE CASCADE,
+--  branch                 FOREIGN KEY  (id) REFERENCES Branch(id) ON DELETE CASCADE ON UPDATE CASCADE
+--)
